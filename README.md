@@ -1,4 +1,4 @@
-# 🌐 Proiect CCNA — Telacad SRL
+# 🌐 Proiect CCNA — Telacad - Eduard Stanescu
 ### Infrastructura de Retea Enterprise in Cisco Packet Tracer
 
 ![Cisco](https://img.shields.io/badge/Cisco-Packet%20Tracer-blue?style=for-the-badge&logo=cisco)
@@ -117,12 +117,9 @@ Comunicarea functioneaza intre toate cele 3 retele.
 
 ## 🌍 Servicii Web
 
-- 🌐 **Pagina principala** → [www.proiect-ccna.com](web/index.html)
-- 📋 **Scenarii testare** → [scenarii.proiect-ccna.com](web/scenarii.html)
+- 🌐 **http://www.proiect-ccna.com** — Pagina principala
+- 📋 **http://scenarii.proiect-ccna.com/scenarii.html** — Scenarii de testare
 
-> **GitHub Pages** (dupa activare):
-> - https://stanescu151191.github.io/proiect-ccna-telacad/web/index.html
-> - https://stanescu151191.github.io/proiect-ccna-telacad/web/scenarii.html
 ---
 
 ## 🧪 Scenarii de Testare
@@ -191,4 +188,72 @@ proiect-ccna-telacad/
 
 ---
 
+> *Proiect realizat in cadrul cursului CCNA — Telacad SRL 2026*
+
+---
+
+## 📸 Screenshots
+
+### 🗺️ Topologie completă
+![Topologie](screenshots/01_topology_overview.png)
+
+---
+
+### 🔄 HSRP Load Balancing
+> sw-dist01 Active pe VLAN 10,20,40 | sw-dist02 Active pe VLAN 50,77,99
+
+![HSRP](screenshots/02_hsrp_standby_brief.png)
+
+---
+
+### ⚡ EtherChannel Po1 LACP
+> Po1(SU) — Fa0/23(P) + Fa0/24(P) ambele active
+
+![EtherChannel](screenshots/03_etherchannel_summary.png)
+
+---
+
+### 🗺️ Tabela de rutare R1
+> Doua rute redundante spre 10.10.0.0/16
+
+![IP Route R1](screenshots/04_ip_route_r1.png)
+
+---
+
+### 🌐 Server Web
+> Acces la www.proiect-ccna.com din Reteaua 1
+
+![Web Browser](screenshots/05_web_browser.png)
+
+---
+
+### 🌍 IPv6 SLAAC
+> PC primeste adresa IPv6 automat din prefixul 2001:ABC:1:10::/64
+
+![IPv6 SLAAC](screenshots/06_ipv6_slaac.png)
+
+---
+
+### 📧 Serviciu Email
+> Comunicare email intre departamente din retele diferite
+
+![Email Service](screenshots/07_email_service.png)
+
+---
+
+### 🔁 STP Redundanta
+> Fa0/24 blocat de STP — gata pentru failover
+
+![STP](screenshots/08_stp_redundancy.png)
+
+---
+
+### 🖨️ DHCP Binding
+> Printere VLAN 50 cu IP-uri alocate dinamic
+
+![DHCP](screenshots/09_dhcp_binding.png)
+
+---
+
 > *Proiect realizat in cadrul cursului CCNA — Telacad 2026*
+
