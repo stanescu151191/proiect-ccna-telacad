@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Proiect CCNA - Telacad - Eduard Stanescu</title>
+</head>
+<body bgcolor="#1a1a2e">
+<font color="#00d4ff">
+
+<h1 align="center">
+*** PROIECT - CCNA TELACAD - Eduard Stanescu  ***
+</h1>
+<h2 align="center">Proiect Retea de Calculatoare - CCNA</h2>
+<hr color="#00d4ff">
+
+<h3>Descriere Proiect</h3>
+<p>
+Am creat o infrastructura de retea
+complexa, distribuita pe 3 zone distincte, interconectate
+printr-o topologie redundanta si scalabila.
+</p>
+
+<hr color="#00d4ff">
+<h3>Reteaua 1 - HQ (SwitchBlock)</h3>
+<p>
+Sediul central foloseste o arhitectura de tip SwitchBlock
+cu doua switch-uri de distributie (sw-dist01 si sw-dist02)
+si trei switch-uri de acces (sw-acc01, sw-acc02, sw-acc03).
+</p>
+<p><b>Caracteristici:</b></p>
+<p>- EtherChannel LACP (Po1) intre sw-dist01 si sw-dist02</p>
+<p>- HSRP cu load balancing pe 6 VLANuri</p>
+<p>- STP pentru redundanta la nivel de acces</p>
+<p>- DHCP pentru VLAN 50 (Printing)</p>
+<p><b>VLANuri:</b></p>
+<p>- VLAN 10 - Contabilitate : 10.10.10.0/24</p>
+<p>- VLAN 20 - Vanzari       : 10.10.20.0/24</p>
+<p>- VLAN 40 - Productie     : 10.10.40.0/24</p>
+<p>- VLAN 50 - Printing      : 10.10.50.0/24</p>
+<p>- VLAN 77 - HR            : 10.10.77.0/24</p>
+<p>- VLAN 99 - Management    : 10.10.99.0/24</p>
+
+<hr color="#00d4ff">
+<h3>Reteaua 2 - Productie (Router-on-a-Stick)</h3>
+<p>
+Sucursala foloseste o topologie Router-on-a-Stick prin R2,
+cu un switch de acces (sw-prod) care deserveste departamentele
+de Productie si Vanzari.
+</p>
+<p><b>VLANuri:</b></p>
+<p>- VLAN 20 - Vanzari    : 10.20.20.0/24</p>
+<p>- VLAN 40 - Productie  : 10.20.40.0/24</p>
+<p>- VLAN 50 - Printing   : 10.20.50.0/24</p>
+<p>- VLAN 99 - Management : 10.20.99.0/24</p>
+
+<hr color="#00d4ff">
+<h3>Reteaua 3 - Data Center</h3>
+<p>
+Serverele companiei sunt conectate direct la modulul
+de switch al routerului R3 si ofera servicii esentiale
+pentru intreaga companie.
+</p>
+<p><b>Servicii disponibile:</b></p>
+<p>- DNS  : proiect-ccna.com</p>
+<p>- HTTP : www.proiect-ccna.com</p>
+<p>- MAIL : mail.proiect-ccna.com</p>
+<p>- App  : Aplicatie Contabilitate (10.30.10.10)</p>
+
+<hr color="#00d4ff">
+<h3>Serviciul de Email</h3>
+<p>
+Reteaua dispune de un server de email
+dedicat, accesibil din toate cele 3 retele.
+Fiecare statie de lucru are un cont de email dedicat,
+permitand comunicarea interna intre toate departamentele.
+</p>
+<p><b>Server mail:</b> mail.proiect-ccna.com (10.30.99.10)</p>
+<p><b>Protocol intrare:</b> POP3</p>
+<p><b>Protocol iesire:</b> SMTP</p>
+<p><b>Conturi email create:</b></p>
+<p>- conta@proiect-ccna.com   : Departament Contabilitate</p>
+<p>- vanzari@proiect-ccna.com : Departament Vanzari</p>
+<p>- prod@proiect-ccna.com    : Departament Productie</p>
+<p>- hr@proiect-ccna.com      : Departament HR</p>
+<p><b>Exemplu comunicare:</b></p>
+<p>
+Utilizatorul conta@proiect-ccna.com din Reteaua 1
+poate trimite email catre prod@proiect-ccna.com
+din Reteaua 2, traficul traversand R1 si R2
+in mod transparent pentru utilizator.
+</p>
+<p><b>Disponibilitate:</b></p>
+<p>- Accesibil din Reteaua 1 : 10.10.0.0/16</p>
+<p>- Accesibil din Reteaua 2 : 10.20.0.0/16</p>
+<p>- Accesibil din Reteaua 3 : 10.30.0.0/16</p>
+
+<hr color="#00d4ff">
+<h3>Interconectare</h3>
+<p>
+Cele 3 retele sunt interconectate prin routerul central R1
+folosind rute statice cu sumarizare la nivel de /16.
+</p>
+<p>- R1 - R2        : 172.16.0.8/30</p>
+<p>- R1 - R3        : 172.16.0.16/30</p>
+<p>- R1 - sw-dist01 : 172.16.0.0/30</p>
+<p>- R1 - sw-dist02 : 172.16.0.4/30</p>
+<p>- R2 - R3        : 172.16.0.12/30</p>
+
+<hr color="#00d4ff">
+<h3>IPv6</h3>
+<p>Reteaua suporta dual-stack IPv4 si IPv6:</p>
+<p>- Net1 : 2001:ABC:1::/48</p>
+<p>- Net2 : 2001:ABC:2::/48</p>
+<p>- Net3 : 2001:ABC:3::/48</p>
+<p>PC-urile primesc adrese IPv6 automat prin SLAAC.</p>
+
+<hr color="#00d4ff">
+<h3>Redundanta</h3>
+<p>- HSRP     : failover gateway in sub 3 secunde</p>
+<p>- STP      : failover uplink in 30 secunde</p>
+<p>- Po1 LACP : EtherChannel cu doua linkuri fizice</p>
+<p>- Rutare redundanta : doua linkuri active simultan
+  spre R1 cu distributia automata a traficului.
+  Daca un link pica, traficul trece automat
+  pe celalalt link fara intrerupere.</p>
+
+<hr color="#00d4ff">
+<p align="center">
+  <a href="http://scenarii.proiect-ccna.com/scenarii.html">
+    <b>>> Vezi Scenariile de Testare <<</b>
+  </a>
+</p>
+
+<hr color="#00d4ff">
+<p align="center">
+  <b>Eduard Stanescu - Proiect CCNA 2026</b>
+</p>
+<p align="center">
+  www.proiect-ccna.com | IP: 10.30.99.10
+</p>
+
+</font>
+</body>
+</html>
