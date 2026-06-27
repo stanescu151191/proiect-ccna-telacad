@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580">
+  <rect width="900" height="580" fill="white"/>
+
+  <!-- ZONE NET1 -->
+  <rect x="25" y="18" width="850" height="222" rx="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="42" y="40" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#1565C0">Reteaua 1 — HQ  ·  10.10.0.0/16  ·  IPv6: 2001:ABC:1::/48</text>
+
+  <!-- ZONE NET2 -->
+  <rect x="25" y="378" width="360" height="168" rx="12" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="42" y="400" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">Reteaua 2 — Productie  ·  10.20.0.0/16</text>
+
+  <!-- ZONE NET3 -->
+  <rect x="515" y="378" width="360" height="168" rx="12" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="532" y="400" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6A1B9A">Reteaua 3 — Data Center  ·  10.30.0.0/16</text>
+
+  <!-- EtherChannel Po1 (double line) -->
+  <line x1="312" y1="95" x2="538" y2="95" stroke="#1565C0" stroke-width="3.5"/>
+  <line x1="312" y1="103" x2="538" y2="103" stroke="#1565C0" stroke-width="3.5"/>
+  <text x="425" y="88" font-family="Arial,sans-serif" font-size="11" fill="#0D47A1" text-anchor="middle" font-weight="bold">Po1 LACP  (Fa0/23 + Fa0/24)</text>
+
+  <!-- sw-dist01 -->
+  <rect x="162" y="68" width="150" height="58" rx="8" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+  <text x="237" y="89" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">sw-dist01</text>
+  <text x="237" y="105" font-family="Arial,sans-serif" font-size="10" fill="#BBDEFB" text-anchor="middle">HSRP Active  VLAN 10,20,40</text>
+  <text x="237" y="118" font-family="Arial,sans-serif" font-size="10" fill="#BBDEFB" text-anchor="middle">172.16.0.1</text>
+
+  <!-- sw-dist02 -->
+  <rect x="538" y="68" width="150" height="58" rx="8" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+  <text x="613" y="89" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">sw-dist02</text>
+  <text x="613" y="105" font-family="Arial,sans-serif" font-size="10" fill="#BBDEFB" text-anchor="middle">HSRP Active  VLAN 50,77,99</text>
+  <text x="613" y="118" font-family="Arial,sans-serif" font-size="10" fill="#BBDEFB" text-anchor="middle">172.16.0.5</text>
+
+  <!-- sw-acc01 -->
+  <rect x="58" y="178" width="115" height="44" rx="7" fill="#90CAF9" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="115" y="197" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#0D47A1" text-anchor="middle">sw-acc01</text>
+  <text x="115" y="213" font-family="Arial,sans-serif" font-size="10" fill="#1565C0" text-anchor="middle">10.10.99.11</text>
+
+  <!-- sw-acc02 -->
+  <rect x="368" y="178" width="115" height="44" rx="7" fill="#90CAF9" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="425" y="197" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#0D47A1" text-anchor="middle">sw-acc02</text>
+  <text x="425" y="213" font-family="Arial,sans-serif" font-size="10" fill="#1565C0" text-anchor="middle">10.10.99.12</text>
+
+  <!-- sw-acc03 -->
+  <rect x="677" y="178" width="115" height="44" rx="7" fill="#90CAF9" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="734" y="197" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#0D47A1" text-anchor="middle">sw-acc03</text>
+  <text x="734" y="213" font-family="Arial,sans-serif" font-size="10" fill="#1565C0" text-anchor="middle">10.10.99.13</text>
+
+  <!-- PRIMARY uplinks sw-dist01 -> acc01 and acc02 -->
+  <line x1="210" y1="126" x2="140" y2="178" stroke="#1565C0" stroke-width="1.8"/>
+  <line x1="255" y1="126" x2="410" y2="178" stroke="#1565C0" stroke-width="1.8"/>
+  <!-- PRIMARY uplinks sw-dist02 -> acc02 and acc03 -->
+  <line x1="570" y1="126" x2="440" y2="178" stroke="#1565C0" stroke-width="1.8"/>
+  <line x1="610" y1="126" x2="710" y2="178" stroke="#1565C0" stroke-width="1.8"/>
+  <!-- REDUNDANT uplinks (dashed STP blocked) -->
+  <line x1="220" y1="126" x2="700" y2="178" stroke="#90CAF9" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <line x1="600" y1="126" x2="130" y2="178" stroke="#90CAF9" stroke-width="1.2" stroke-dasharray="6,4"/>
+
+  <!-- R1 -->
+  <rect x="358" y="286" width="184" height="56" rx="10" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+  <text x="450" y="308" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="white" text-anchor="middle">R1</text>
+  <text x="450" y="328" font-family="Arial,sans-serif" font-size="11" fill="#FFF8E1" text-anchor="middle">Router Central</text>
+
+  <!-- sw-dist01 -> R1 -->
+  <line x1="237" y1="126" x2="395" y2="286" stroke="#546E7A" stroke-width="2"/>
+  <rect x="264" y="196" width="106" height="18" rx="3" fill="white" opacity="0.9"/>
+  <text x="317" y="209" font-family="Arial,sans-serif" font-size="11" fill="#37474F" text-anchor="middle" font-weight="bold">172.16.0.0/30</text>
+
+  <!-- sw-dist02 -> R1 -->
+  <line x1="613" y1="126" x2="505" y2="286" stroke="#546E7A" stroke-width="2"/>
+  <rect x="526" y="196" width="106" height="18" rx="3" fill="white" opacity="0.9"/>
+  <text x="579" y="209" font-family="Arial,sans-serif" font-size="11" fill="#37474F" text-anchor="middle" font-weight="bold">172.16.0.4/30</text>
+
+  <!-- R2 -->
+  <rect x="95" y="418" width="145" height="50" rx="8" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+  <text x="167" y="439" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">R2</text>
+  <text x="167" y="456" font-family="Arial,sans-serif" font-size="10" fill="#E8F5E9" text-anchor="middle">Router-on-a-Stick</text>
+
+  <!-- sw-prod -->
+  <rect x="95" y="494" width="145" height="40" rx="7" fill="#A5D6A7" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="167" y="511" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#1B5E20" text-anchor="middle">sw-prod</text>
+  <text x="167" y="525" font-family="Arial,sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle">VLAN 20,40,50,99</text>
+  <line x1="167" y1="468" x2="167" y2="494" stroke="#2E7D32" stroke-width="1.5"/>
+
+  <!-- R1 -> R2 -->
+  <line x1="390" y1="342" x2="215" y2="418" stroke="#546E7A" stroke-width="2"/>
+  <rect x="255" y="366" width="106" height="18" rx="3" fill="white" opacity="0.9"/>
+  <text x="308" y="379" font-family="Arial,sans-serif" font-size="11" fill="#37474F" text-anchor="middle" font-weight="bold">172.16.0.8/30</text>
+
+  <!-- R3 -->
+  <rect x="608" y="418" width="145" height="50" rx="8" fill="#9C27B0" stroke="#6A1B9A" stroke-width="2"/>
+  <text x="680" y="439" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">R3</text>
+  <text x="680" y="456" font-family="Arial,sans-serif" font-size="10" fill="#F3E5F5" text-anchor="middle">Router + SW modul</text>
+
+  <!-- R1 -> R3 -->
+  <line x1="510" y1="342" x2="650" y2="418" stroke="#546E7A" stroke-width="2"/>
+  <rect x="543" y="366" width="112" height="18" rx="3" fill="white" opacity="0.9"/>
+  <text x="599" y="379" font-family="Arial,sans-serif" font-size="11" fill="#37474F" text-anchor="middle" font-weight="bold">172.16.0.16/30</text>
+
+  <!-- R2 -> R3 (horizontal) -->
+  <line x1="240" y1="443" x2="608" y2="443" stroke="#546E7A" stroke-width="2"/>
+  <rect x="368" y="433" width="112" height="18" rx="3" fill="white" opacity="0.9"/>
+  <text x="424" y="446" font-family="Arial,sans-serif" font-size="11" fill="#37474F" text-anchor="middle" font-weight="bold">172.16.0.12/30</text>
+
+  <!-- DNS/HTTP/Mail Server -->
+  <rect x="528" y="494" width="105" height="40" rx="6" fill="#CE93D8" stroke="#6A1B9A" stroke-width="1.5"/>
+  <text x="580" y="510" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#4A148C" text-anchor="middle">DNS/HTTP/Mail</text>
+  <text x="580" y="525" font-family="Arial,sans-serif" font-size="9" fill="#6A1B9A" text-anchor="middle">10.30.99.10</text>
+
+  <!-- App-Conta Server -->
+  <rect x="642" y="494" width="105" height="40" rx="6" fill="#CE93D8" stroke="#6A1B9A" stroke-width="1.5"/>
+  <text x="694" y="510" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#4A148C" text-anchor="middle">App-Conta</text>
+  <text x="694" y="525" font-family="Arial,sans-serif" font-size="9" fill="#6A1B9A" text-anchor="middle">10.30.10.10</text>
+
+  <!-- Printing Server -->
+  <rect x="756" y="494" width="105" height="40" rx="6" fill="#CE93D8" stroke="#6A1B9A" stroke-width="1.5"/>
+  <text x="808" y="510" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#4A148C" text-anchor="middle">Printing</text>
+  <text x="808" y="525" font-family="Arial,sans-serif" font-size="9" fill="#6A1B9A" text-anchor="middle">10.30.50.10</text>
+
+  <!-- R3 -> Servers -->
+  <line x1="648" y1="468" x2="580" y2="494" stroke="#6A1B9A" stroke-width="1.5"/>
+  <line x1="680" y1="468" x2="694" y2="494" stroke="#6A1B9A" stroke-width="1.5"/>
+  <line x1="712" y1="468" x2="808" y2="494" stroke="#6A1B9A" stroke-width="1.5"/>
+
+  <!-- LEGEND -->
+  <rect x="25" y="553" width="850" height="22" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="45" y1="564" x2="75" y2="564" stroke="#1565C0" stroke-width="2"/>
+  <text x="80" y="568" font-family="Arial,sans-serif" font-size="10" fill="#333">Uplink activ</text>
+  <line x1="170" y1="564" x2="200" y2="564" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="205" y="568" font-family="Arial,sans-serif" font-size="10" fill="#333">Redundant STP blocat</text>
+  <line x1="355" y1="561" x2="385" y2="561" stroke="#1565C0" stroke-width="3.5"/>
+  <line x1="355" y1="567" x2="385" y2="567" stroke="#1565C0" stroke-width="3.5"/>
+  <text x="390" y="568" font-family="Arial,sans-serif" font-size="10" fill="#333">EtherChannel Po1 LACP</text>
+  <line x1="570" y1="564" x2="600" y2="564" stroke="#546E7A" stroke-width="2"/>
+  <text x="605" y="568" font-family="Arial,sans-serif" font-size="10" fill="#333">Link WAN (172.16.0.0/16)</text>
+</svg>
