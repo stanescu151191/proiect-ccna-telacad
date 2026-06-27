@@ -117,9 +117,12 @@ Comunicarea functioneaza intre toate cele 3 retele.
 
 ## 🌍 Servicii Web
 
-- 🌐 **http://www.proiect-ccna.com** — Pagina principala
-- 📋 **http://scenarii.proiect-ccna.com/scenarii.html** — Scenarii de testare
+- 🌐 **Pagina principala** → [www.proiect-ccna.com](web/index.html)
+- 📋 **Scenarii testare** → [scenarii.proiect-ccna.com](web/scenarii.html)
 
+> **GitHub Pages** (dupa activare):
+> - https://stanescu151191.github.io/proiect-ccna-telacad/web/index.html
+> - https://stanescu151191.github.io/proiect-ccna-telacad/web/scenarii.html
 ---
 
 ## 🧪 Scenarii de Testare
