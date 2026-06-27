@@ -188,4 +188,4 @@ proiect-ccna-telacad/
 
 ---
 
-> *Proiect realizat in cadrul cursului CCNA — Telacad SRL 2026*
+> *Proiect realizat in cadrul cursului CCNA — Telacad 2026*
